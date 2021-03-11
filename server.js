@@ -28,6 +28,20 @@ const reserved = [
 
 
   },
+  {
+    customerName: 'darthmaul',
+    phoneNumber: 'Darth Maul',
+    customerEmail: 'Sith Lord',
+    CustomerID: 'b',
+  },
+  {
+    customerName: 'obiwankenobi',
+    phoneNumber: 'Obi Wan Kenobi',
+    customerEmail: 'Jedi Master',
+    CustomerID: 'c',
+
+
+  },
 ]
 const waiting =[
 
