@@ -64,4 +64,8 @@ app.post('/api/tables', (req, res) => {
   app.get('/api/tables', (req, res) => res.json(reserved));
   app.get('/api/waitlist', (req, res) => res.json(waiting));
   
+  app.post('/api/clear', (req, res) => {
+reserved.pop()
+  });
+
 app.listen(PORT, () => console.log(`Server is listening on PORT: ${PORT}`));
