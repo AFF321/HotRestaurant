@@ -12,35 +12,31 @@ const reserved = [
   { customerName: 'yoda',
     phoneNumber: 'Yoda',
     customerEmail: 'Jedi Master',
-    CustomerID: 'a',
+    customerID: 'a',
   },
   {
     customerName: 'darthmaul',
     phoneNumber: 'Darth Maul',
     customerEmail: 'Sith Lord',
-    CustomerID: 'b',
+    customerID: 'b',
   },
   {
     customerName: 'obiwankenobi',
     phoneNumber: 'Obi Wan Kenobi',
     customerEmail: 'Jedi Master',
-    CustomerID: 'c',
-
-
+    customerID: 'c',
   },
   {
     customerName: 'darthmaul',
     phoneNumber: 'Darth Maul',
     customerEmail: 'Sith Lord',
-    CustomerID: 'b',
+    customerID: 'b',
   },
   {
     customerName: 'obiwankenobi',
     phoneNumber: 'Obi Wan Kenobi',
     customerEmail: 'Jedi Master',
-    CustomerID: 'c',
-
-
+    customerID: 'c',
   },
 ]
 const waiting =[
@@ -61,25 +57,36 @@ app.post('/api/tables', (req, res) => {
             openRes: waiting,
             status: 'waitlist'
         }
+        if (reserved.length >4&&waiting.length < 0){
+          console.log('hello')
+          reserved.push(waiting);
+          
+        }
         return res.json(responseobj)
     
    }
+
     
     console.log(newguest);
     
     reserved.push(newguest);
+
     const responseobj = {
         openRes: reserved,
         status: 'reserve'
     }
+
     return res.json(responseobj);
   });
 
   app.get('/api/tables', (req, res) => res.json(reserved));
   app.get('/api/waitlist', (req, res) => res.json(waiting));
-  
   app.post('/api/clear', (req, res) => {
-reserved.pop()
+reserved.pop();
+if(waiting.length> 0){
+const newReserved = waiting.shift();
+reserved.push(newReserved)
+}
   });
 
 app.listen(PORT, () => console.log(`Server is listening on PORT: ${PORT}`));
