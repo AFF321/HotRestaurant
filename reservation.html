@@ -112,7 +112,7 @@
       function(data) {
 
         // If a table is available... tell user they are booked.
-        if (data) {
+        if (data.status === 'reserve') {
           alert("Yay! You are officially booked!");
         }
 
