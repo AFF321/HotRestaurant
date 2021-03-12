@@ -2,4 +2,14 @@
   color:white;
   font-weight: bold;
 }
- 
+#page-1 {
+  background-image: url('./images/restaurant2.jpg');
+}
+
+#page-2 {
+  background-image: url('./images/restaurant3.jpg');
+}
+
+#page-3 {
+  background-image: url('./images/restaurant3.jpg');
+}
